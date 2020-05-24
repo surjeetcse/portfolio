@@ -1,26 +1,52 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import Projects from "./Projects";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = { displayBio: false };
+  // constructor() {
+  //   super();
+  //   this.state = { displayBio: false };
+  //   // this.readMore = this.readMore.bind(this);
+  //   // this.showLess = this.showLess.bind(this);
+  //   this.toggleDisplayBio = this.toggleDisplayBio.bind(this);
+  // }
+
+  // toggleDisplayBio() {
+  //   this.setState({ displayBio: !this.state.displayBio });
+  // }
+
+  toggleDisplayBio = () => {
+    this.setState({ displayBio: !this.state.displayBio });
+  };
+
+  // readMore() {
+  //   console.log(this);
+  //   this.setState({ displayBio: true });
+  // }
+  // showLess() {
+  //   console.log(this);
+  //   this.setState({ displayBio: false });
+  // }
+  render() {
+    return (
+      <div>
+        <h6>Hello !</h6>
+        <h2>My name is surjeet, i am software engineer</h2>
+        {this.state.displayBio ? (
+          <div>
+            <h2>i live in banglore</h2>
+            <button onClick={this.toggleDisplayBio}>Show less</button>
+          </div>
+        ) : (
+          <div>
+            <button onClick={this.toggleDisplayBio}>Read more</button>
+          </div>
+        )}
+        <hr />
+        <Projects />
+      </div>
+    );
+  }
 }
 
 export default App;
