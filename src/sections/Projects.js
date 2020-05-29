@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import PROJECTS from "./data/projects";
+import PROJECTS from "../data/projects";
 
 class Project extends Component {
   render() {
-    console.log("this.props", this.props);
-    const { id, title, desc, image, url } = this.props.project;
+    // console.log("this.props", this.props);
+    const {title, desc, image, url } = this.props.project;
     return (
       <div style={{ display: "inline-block", width: 300, margin: 10 }}>
         <h3>{title}</h3>
